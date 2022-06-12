@@ -5,6 +5,7 @@
   box-sizing: border-box;
   outline: none;
   list-style: none;
+  text-decoration: none;
 }
 
 :root {
@@ -14,8 +15,8 @@
 
   --button: hsl(258, 73%, 62%);
 
-  --text-color: hsl(0, 0%, 100%);
-  --text-color-menu-mobile: hsl(240, 9%, 89%);
+  --text-color: #ffffff;
+  --text-color-menu-mobile: #e0e0e5;
 
   --nav-height: 3.7rem;
   font-size: 62.5%;
@@ -30,13 +31,15 @@ html {
 }
 
 .wrapper {
-  width: min(50rem, 100%);
+  width: min(43.3rem, 100%);
   margin: 0 auto;
   padding-inline: 4.2rem;
 }
 
-ul {
-  color: var(--text-color);
+ul li {
+  color: var(--text-color-menu-mobile);
+  padding: 1.8rem 0rem 1.4rem;
+  transition: ease-in-out border-left 0.2s;
 }
 
 /* ==========NAVIGATION============= */
@@ -64,14 +67,9 @@ nav button {
   cursor: pointer;
 }
 
-/* ==========NAVIGATION============= */
-
+/* ==========MENU-EXPANDED============= */
 body.menuExpanded {
   overflow: hidden;
-}
-
-body.menuExpanded > :not(nav) {
-  visibility: hidden;
 }
 
 .menu,
@@ -86,32 +84,78 @@ body.menuExpanded .closeMenu {
   opacity: 1;
   visibility: visible;
 }
-.menu {
-  transform: translateY(100%);
-}
+
 body.menuExpanded .menu {
+  position: fixed;
   top: 0;
   left: 0;
   background: var(--backgrond);
 
   width: 100vw;
   height: 100vh;
-
-  padding-top: var(--nav-height);
-
-  transform: translateY(0%);
 }
 
-.menu ul {
-  display: flex;
-  flex-direction: column;
-  font-weight: 400;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-}
-
-body.menuExpanded .logo,
-body.menuExpanded button {
+body.menuExpanded nav {
   position: relative;
-  z-index: 100;
 }
+
+body.menuExpanded ul li::before {
+  content: "";
+  position: relative;
+  width: 0%;
+  height: 2px;
+  top: -1.8rem;
+  background: var(--button);
+  display: block;
+
+  transition: width 0.5s;
+}
+
+body.menuExpanded ul li:hover::before {
+  width: 100%;
+}
+
+body.menuExpanded ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--button);
+
+  position: relative;
+  bottom: -1.4rem;
+  left: -0.5rem;
+
+  display: block;
+
+  transition: width 0.5s;
+}
+
+body.menuExpanded ul li:hover::after {
+  width: 100%;
+  opacity: 1;
+  padding-inline: 0.8rem;
+}
+
+body.menuExpanded ul a {
+  color: var(--text-color-menu-mobile);
+  opacity: 0.7;
+  font-size: 1.8rem;
+  margin-left: 3rem;
+}
+
+body.menuExpanded ul a:hover {
+  opacity: 1;
+}
+
+body.menuExpanded ul li:hover {
+  border-left: 0.5rem solid var(--button);
+}
+
+/* 
+body.menuExpanded ul li {
+  border-top: 0.1rem solid var(--border-menu-mobile);
+}
+
+body.menuExpanded ul li:nth-child(5) {
+  border-bottom: 0.1rem solid var(--border-menu-mobile);
+} */
