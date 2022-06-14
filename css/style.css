@@ -262,7 +262,7 @@ main .button {
 }
 
 main .button:hover {
-  background: url(/assets/stacked-waves-haikei.svg) center right;
+  background: url(../assets/stacked-waves-haikei.svg) center right;
 
   font-weight: 700;
   color: var(--backgrond);
