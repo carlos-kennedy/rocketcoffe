@@ -30,7 +30,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: .7rem;
+  width: 0.7rem;
   background: transparent;
 }
 
@@ -39,6 +39,7 @@ html {
   width: 100%;
   height: 100%;
   background: var(--backgrond);
+
   font-family: "Manrope", sans-serif;
 }
 
@@ -49,32 +50,37 @@ html {
 }
 
 ul li {
-  color: var(--text-color-menu-mobile);
   padding: 1.8rem 0rem 1.4rem;
+
+  color: var(--text-color-menu-mobile);
+
   transition: ease-in-out border-left 0.3s;
 }
 
 main {
   margin-top: 18.4rem;
+
   text-align: center;
   color: var(--text-color);
 }
 
 a {
-  color: var(--text-color);
   display: inline-block;
+
+  color: var(--text-color);
 }
 
 /* ==========NAVIGATION============= */
 
 nav {
-  display: flex;
-  margin-top: 3.7rem;
   height: var(--nav-height);
+  width: 100vw;
+  margin-top: 3.7rem;
+
+  display: flex;
 
   position: fixed;
   top: 0;
-  width: 100vw;
   z-index: 100;
 }
 
@@ -86,6 +92,7 @@ nav .wrapper {
 
 nav button {
   background: transparent;
+
   cursor: pointer;
 }
 
@@ -102,14 +109,14 @@ body.menuExpanded {
 .menu,
 .closeMenu,
 body.menuExpanded .openMenu {
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
 }
 
 body.menuExpanded .menu,
 body.menuExpanded .closeMenu {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 
 body.menuExpanded .logo,
@@ -119,13 +126,14 @@ body.menuExpanded button {
 }
 
 body.menuExpanded .menu {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: var(--backgrond);
+
   position: fixed;
   top: 0;
   left: 0;
-  background: var(--backgrond);
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
 }
 
 body.menuExpanded nav {
@@ -153,12 +161,12 @@ body.menuExpanded ul li:hover {
 
 body.menuExpanded ul li::before {
   content: "";
-  position: relative;
   width: 0%;
   height: 1px;
-
-  top: -2rem;
   background: var(--button);
+
+  position: relative;
+  top: -2rem;
   display: block;
 
   transition: width 1s;
@@ -176,7 +184,6 @@ body.menuExpanded ul li::after {
 
   position: relative;
   bottom: -1.4rem;
-
   display: block;
 
   transition: width 1s;
@@ -184,15 +191,17 @@ body.menuExpanded ul li::after {
 
 body.menuExpanded ul li:hover::after {
   width: 100%;
-  opacity: 1;
   padding-inline: 0.8rem;
+  opacity: 1;
 }
 
 body.menuExpanded ul a {
-  color: var(--text-color-menu-mobile);
-  opacity: 0.7;
-  font-size: 1.8rem;
   margin-left: 3rem;
+
+  opacity: 0.7;
+
+  color: var(--text-color-menu-mobile);
+  font-size: 1.8rem;
 }
 
 body.menuExpanded ul a:hover {
@@ -222,27 +231,30 @@ main .content h2 {
 
 main .content .titleEffect {
   font-weight: 700;
-  font-size: clamp(5rem, 4.2rem, 100%);
+  font-size: 5rem;
   line-height: 6.8rem;
   letter-spacing: -0.03em;
   color: var(--backgrond);
+  
   text-shadow: 0.1rem 0.1rem 0 var(--button), 0.1rem -0.1rem 0 var(--button),
     -0.1rem 0.1rem 0 var(--button), -0.1rem 0.1rem 0 var(--button);
+
   -webkit-animation: text-flicker-in-glow 4s linear both;
   animation: text-flicker-in-glow 4s linear infinite both;
 }
 
 main .button {
+  width: 17.4rem;
+  margin: 0 auto;
+  margin-top: 8.8rem;
+  margin-bottom: 9.8rem;
+  padding: 1rem 3rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 
-  margin: 0 auto;
-  width: 17.4rem;
-  margin-top: 8.8rem;
-  margin-bottom: 9.8rem;
-  padding: 1rem 3rem;
   border: 0.1rem solid var(--button);
   border-radius: 0.4rem;
 
@@ -251,20 +263,29 @@ main .button {
 
 main .button:hover {
   background: url(/assets/stacked-waves-haikei.svg) center right;
+
+  font-weight: 700;
+  color: var(--backgrond);
+}
+
+main .button:hover path {
+  fill: var(--backgrond);
 }
 
 main img {
-  transform: translateY(1rem);
   width: 100%;
+  transform: translateY(1rem);
+
   animation: glow 6.8s alternate-reverse infinite both;
 }
 
 .content .bg {
   width: 100%;
+  
   position: absolute;
-  z-index: 0;
   bottom: -32.6rem;
   left: 0;
+  z-index: 0;
 }
 
 /* ==========ANIMATIONS============= */
