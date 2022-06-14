@@ -10,7 +10,7 @@
 }
 
 :root {
-  --backgrond: hsl(0, 0%, 0%);
+  --background: hsl(0, 0%, 0%);
   --border: hsl(240, 6%, 17%);
   --border-menu-mobile: hsl(240, 7%, 68%);
 
@@ -22,6 +22,8 @@
   --nav-height: 3.7rem;
   font-size: 62.5%;
 }
+
+/* ==CUSTOM-SCROLLBAR== */
 
 ::-webkit-scrollbar-thumb {
   background: var(--button);
@@ -37,15 +39,14 @@
 body,
 html {
   width: 100%;
-  height: 100%;
-  background: var(--backgrond);
+  background: var(--background);
 
   font-family: "Manrope", sans-serif;
 }
 
 .wrapper {
   width: min(43.3rem, 100%);
-  margin: 0 auto;
+  margin-inline: auto;
   padding-inline: 2rem;
 }
 
@@ -96,6 +97,14 @@ nav button {
   cursor: pointer;
 }
 
+nav .logoDesktop {
+  display: none;
+}
+
+nav .button {
+  display: none;
+}
+
 nav .menu,
 nav .closeMenu {
   position: fixed;
@@ -129,7 +138,7 @@ body.menuExpanded .menu {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background: var(--backgrond);
+  background: var(--background);
 
   position: fixed;
   top: 0;
@@ -234,8 +243,8 @@ main .content .titleEffect {
   font-size: 5rem;
   line-height: 6.8rem;
   letter-spacing: -0.03em;
-  color: var(--backgrond);
-  
+  color: var(--background);
+
   text-shadow: 0.1rem 0.1rem 0 var(--button), 0.1rem -0.1rem 0 var(--button),
     -0.1rem 0.1rem 0 var(--button), -0.1rem 0.1rem 0 var(--button);
 
@@ -258,30 +267,26 @@ main .button {
   border: 0.1rem solid var(--button);
   border-radius: 0.4rem;
 
-  transition: background 2.6s;
+  transition: background 1.9s;
 }
 
 main .button:hover {
-  background: url(/assets/stacked-waves-haikei.svg) center right;
+  background: var(--button);
 
-  font-weight: 700;
-  color: var(--backgrond);
-}
+  box-shadow: inset 0px 0px 10px black;
 
-main .button:hover path {
-  fill: var(--backgrond);
+  filter: brightness(1);
 }
 
 main img {
   width: 100%;
   transform: translateY(1rem);
-
   animation: glow 6.8s alternate-reverse infinite both;
 }
 
 .content .bg {
   width: 100%;
-  
+
   position: absolute;
   bottom: -32.6rem;
   left: 0;
@@ -599,5 +604,149 @@ main img {
 
   85% {
     filter: drop-shadow(0 -1rem 8.1rem var(--button));
+  }
+}
+
+/* ==========RESPONSIVE============= */
+
+@media (min-width: 1024px) {
+  /* ==CUSTOM-SCROLLBAR== */
+  ::-webkit-scrollbar-thumb {
+    background: var(--button);
+    border-radius: 1rem;
+    width: 2rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.7rem;
+    background: transparent;
+  }
+
+  /* ==========GERAL============= */
+  nav#navigation {
+    display: flex;
+  }
+
+  body {
+    overflow: auto;
+  }
+
+  .wrapper {
+    width: min(100rem, 100%);
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  /* ==========NAVIGATION============= */
+  /* ==RESET== */
+  nav#navigation .wrapper * {
+    margin: 0;
+    padding: 0;
+    visibility: inherit;
+    display: initial;
+    opacity: initial;
+    flex-direction: initial;
+    position: initial;
+    font-size: initial;
+    font-weight: initial;
+    transform: initial;
+    color: initial;
+    background: initial;
+    filter: initial;
+  }
+
+  nav#navigation .menu {
+    width: 73%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav#navigation .logo {
+    display: none;
+  }
+
+  nav#navigation .closeMenu,
+  nav#navigation .openMenu {
+    display: none;
+  }
+
+  nav#navigation .menu ul li a {
+    color: var(--text-color);
+  }
+
+  nav#navigation .menu ul {
+    display: flex;
+    gap: 3.2rem;
+    text-align: center;
+  }
+
+  nav#navigation .menu ul li::after {
+    content: "";
+    width: 0%;
+    height: 1px;
+    background: hsl(258, 73%, 62%);
+
+    position: relative;
+    bottom: -2rem;
+    display: block;
+
+    transition: width 1.3s;
+  }
+
+  nav#navigation .menu ul li:hover::after {
+    width: 100%;
+  }
+
+  nav#navigation .button {
+    padding: 1.1rem 3.8rem;
+    border: 0.1rem solid var(--button);
+    border-radius: 0.4rem;
+
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+
+    transition: background 1.2s;
+  }
+
+  nav#navigation .button:hover {
+    background: var(--button);
+
+    box-shadow: inset 0px 0px 3px black;
+
+    color: var(--text-color-menu-mobile);
+
+    filter: brightness(1);
+  }
+
+  /* ==========MAIN============= */
+
+  main {
+    margin-top: 14rem;
+  }
+
+  main header .button {
+    display: none;
+  }
+
+  main h1 {
+    display: none;
+  }
+
+  main .content h2 {
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 10.9rem;
+    letter-spacing: -0.03em;
+  }
+
+  main .content .titleEffect {
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 10.9rem;
+    letter-spacing: -0.03em;
   }
 }
