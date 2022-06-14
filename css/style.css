@@ -272,7 +272,6 @@ main .button {
 
 main .button:hover {
   background: var(--button);
-  background: url(../assets/stacked-waves-haikei.svg) center right;
 
   box-shadow: inset 0px 0px 10px black;
 
