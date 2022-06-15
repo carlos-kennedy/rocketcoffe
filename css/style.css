@@ -14,7 +14,7 @@
   --border: hsl(240, 6%, 17%);
   --border-menu-mobile: hsl(240, 7%, 68%);
 
-  --button: hsl(258, 73%, 62%);
+  --button: #8257e5;
 
   --text-color: #ffffff;
   --text-color-menu-mobile: #e0e0e5;
@@ -288,7 +288,9 @@ main .button:hover {
 
 main img {
   width: 100%;
+ 
   transform: translateY(1rem);
+ 
   animation: glow 6.8s alternate-reverse infinite both;
 }
 
@@ -633,10 +635,12 @@ main img {
 
 @media (min-width: 1024px) {
   /* ==CUSTOM-SCROLLBAR== */
+
   ::-webkit-scrollbar-thumb {
-    background: var(--button);
-    border-radius: 1rem;
     width: 2rem;
+    background: var(--button);
+   
+    border-radius: 1rem;
   }
 
   ::-webkit-scrollbar {
@@ -701,6 +705,7 @@ main img {
   nav#navigation .menu ul {
     display: flex;
     gap: 3.2rem;
+   
     text-align: center;
   }
 
