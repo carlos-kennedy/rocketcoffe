@@ -39,7 +39,6 @@
 body,
 html {
   width: 100%;
-  height: 100%;
   background: var(--background);
 
   font-family: "Manrope", sans-serif;
@@ -60,7 +59,7 @@ ul li {
 }
 
 main {
-  margin-top: 18.4rem;
+  padding-top: 18.4rem;
 
   text-align: center;
   color: var(--text-color);
@@ -288,9 +287,9 @@ main .button:hover {
 
 main img {
   width: 100%;
- 
+
   transform: translateY(1rem);
- 
+
   animation: glow 6.8s alternate-reverse infinite both;
 }
 
@@ -639,7 +638,7 @@ main img {
   ::-webkit-scrollbar-thumb {
     width: 2rem;
     background: var(--button);
-   
+
     border-radius: 1rem;
   }
 
@@ -705,7 +704,7 @@ main img {
   nav#navigation .menu ul {
     display: flex;
     gap: 3.2rem;
-   
+
     text-align: center;
   }
 
