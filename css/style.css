@@ -751,7 +751,7 @@ main img {
   /* ==========MAIN============= */
 
   .ball-left {
-    background: url(/assets/Blur\ Left.png) no-repeat top/contain;
+    background: url(../assets/Blur\ Left.png) no-repeat top/contain;
     width: 32.1rem;
     height: 32.1rem;
 
@@ -763,7 +763,7 @@ main img {
   }
 
   .ball-right {
-    background: url(/assets/Blur\ Right.png) no-repeat top/contain;
+    background: url(../assets/Blur\ Right.png) no-repeat top/contain;
     width: 32.1rem;
     height: 32.1rem;
 
